@@ -4,6 +4,8 @@ Amber Beasock
 
 ----------------------------------------------------------------------------------
 
+
+
 ### Project Overview
 
 #### Background
@@ -167,33 +169,33 @@ print(cm)
 ## 
 ##           Reference
 ## Prediction    A    B    C    D    E
-##          A 2230   18    0    0    0
-##          B    1 1491   11    0    0
-##          C    0    9 1349   15    0
-##          D    0    0    8 1270    4
-##          E    1    0    0    1 1438
+##          A 2229    9    0    0    0
+##          B    2 1504   19    0    0
+##          C    0    5 1347   20    0
+##          D    0    0    2 1265    5
+##          E    1    0    0    1 1437
 ## 
 ## Overall Statistics
-##                                          
-##                Accuracy : 0.9913         
-##                  95% CI : (0.989, 0.9933)
-##     No Information Rate : 0.2845         
-##     P-Value [Acc > NIR] : < 2.2e-16      
-##                                          
-##                   Kappa : 0.989          
-##  Mcnemar's Test P-Value : NA             
+##                                           
+##                Accuracy : 0.9918          
+##                  95% CI : (0.9896, 0.9937)
+##     No Information Rate : 0.2845          
+##     P-Value [Acc > NIR] : < 2.2e-16       
+##                                           
+##                   Kappa : 0.9897          
+##  Mcnemar's Test P-Value : NA              
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: A Class: B Class: C Class: D Class: E
-## Sensitivity            0.9991   0.9822   0.9861   0.9876   0.9972
-## Specificity            0.9968   0.9981   0.9963   0.9982   0.9997
-## Pos Pred Value         0.9920   0.9920   0.9825   0.9906   0.9986
-## Neg Pred Value         0.9996   0.9957   0.9971   0.9976   0.9994
+## Sensitivity            0.9987   0.9908   0.9846   0.9837   0.9965
+## Specificity            0.9984   0.9967   0.9961   0.9989   0.9997
+## Pos Pred Value         0.9960   0.9862   0.9818   0.9945   0.9986
+## Neg Pred Value         0.9995   0.9978   0.9968   0.9968   0.9992
 ## Prevalence             0.2845   0.1935   0.1744   0.1639   0.1838
-## Detection Rate         0.2842   0.1900   0.1719   0.1619   0.1833
-## Detection Prevalence   0.2865   0.1916   0.1750   0.1634   0.1835
-## Balanced Accuracy      0.9979   0.9902   0.9912   0.9929   0.9985
+## Detection Rate         0.2841   0.1917   0.1717   0.1612   0.1832
+## Detection Prevalence   0.2852   0.1944   0.1749   0.1621   0.1834
+## Balanced Accuracy      0.9985   0.9937   0.9904   0.9913   0.9981
 ```
 
 
@@ -202,14 +204,14 @@ overall.accuracy <- round(cm$overall['Accuracy'] * 100, 2)
 sam.err <- round(1 - cm$overall['Accuracy'],2)
 ```
 
-The model is 99.13% accurate on the testing data partitioned from the training data. The expected out of sample error is roughly 0.01%. 
+The model is 99.18% accurate on the testing data partitioned from the training data. The expected out of sample error is roughly 0.01%. 
 
 
 ```r
 plot(modFit)
 ```
 
-![](./prediction_assignment_files/figure-html/unnamed-chunk-10-1.png) 
+![](Figures/unnamed-chunk-10-1.png) 
 
 In the above figure, error rates of the model are plotted over 500 trees. The error rate is less than 0.04 for all 5 classe. 
 
@@ -229,33 +231,33 @@ print(cm2)
 ## 
 ##           Reference
 ## Prediction    A    B    C    D    E
-##          A 2026  252   85  138   37
-##          B   77  952   73  108  114
-##          C   55  115 1032  200  171
-##          D   42  105   96  690   68
-##          E   32   94   82  150 1052
+##          A 1978  304   26  132   49
+##          B   76  836   70   35   93
+##          C   74  183 1157  210  187
+##          D   69  108   89  816   76
+##          E   35   87   26   93 1037
 ## 
 ## Overall Statistics
 ##                                           
-##                Accuracy : 0.7331          
-##                  95% CI : (0.7232, 0.7429)
+##                Accuracy : 0.7423          
+##                  95% CI : (0.7325, 0.7519)
 ##     No Information Rate : 0.2845          
 ##     P-Value [Acc > NIR] : < 2.2e-16       
 ##                                           
-##                   Kappa : 0.6606          
+##                   Kappa : 0.673           
 ##  Mcnemar's Test P-Value : < 2.2e-16       
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: A Class: B Class: C Class: D Class: E
-## Sensitivity            0.9077   0.6271   0.7544  0.53655   0.7295
-## Specificity            0.9088   0.9412   0.9165  0.95259   0.9441
-## Pos Pred Value         0.7983   0.7190   0.6561  0.68931   0.7461
-## Neg Pred Value         0.9612   0.9132   0.9464  0.91293   0.9394
-## Prevalence             0.2845   0.1935   0.1744  0.16391   0.1838
-## Detection Rate         0.2582   0.1213   0.1315  0.08794   0.1341
-## Detection Prevalence   0.3235   0.1687   0.2005  0.12758   0.1797
-## Balanced Accuracy      0.9083   0.7842   0.8354  0.74457   0.8368
+## Sensitivity            0.8862   0.5507   0.8458   0.6345   0.7191
+## Specificity            0.9090   0.9567   0.8990   0.9479   0.9624
+## Pos Pred Value         0.7947   0.7532   0.6389   0.7047   0.8114
+## Neg Pred Value         0.9526   0.8988   0.9650   0.9297   0.9383
+## Prevalence             0.2845   0.1935   0.1744   0.1639   0.1838
+## Detection Rate         0.2521   0.1066   0.1475   0.1040   0.1322
+## Detection Prevalence   0.3172   0.1415   0.2308   0.1476   0.1629
+## Balanced Accuracy      0.8976   0.7537   0.8724   0.7912   0.8408
 ```
 
 
@@ -264,7 +266,7 @@ overall.accuracy2 <- round(cm2$overall['Accuracy'] * 100, 2)
 sam.err2 <- round(1 - cm2$overall['Accuracy'],2)
 ```
 
-The model is 73.31% accurate on the testing data partitioned from the training data. The expected out of sample error is roughly 0.27%. 
+The model is 74.23% accurate on the testing data partitioned from the training data. The expected out of sample error is roughly 0.26%. 
 
 Plot the decision tree model
 
@@ -272,11 +274,15 @@ Plot the decision tree model
 fancyRpartPlot(modFit2)
 ```
 
-![](./prediction_assignment_files/figure-html/unnamed-chunk-13-1.png) 
+```
+## Warning: labs do not fit even at cex 0.15, there may be some overplotting
+```
+
+![](Figures/unnamed-chunk-13-1.png) 
 
 ### Prediction on the Test Data
 
-The Random Forest model gave an accuracy of 99.13%, which is much higher than the 73.31% accuracy from the Decision Tree. So we will use the Random Forest model to make the predictions on the test data to predict the way 20 participates performed the exercise.
+The Random Forest model gave an accuracy of 99.18%, which is much higher than the 74.23% accuracy from the Decision Tree. So we will use the Random Forest model to make the predictions on the test data to predict the way 20 participates performed the exercise.
 
 ```r
 final_prediction <- predict(modFit, test_data, type="class")

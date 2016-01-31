@@ -10,6 +10,10 @@ output:
 
 ----------------------------------------------------------------------------------
 
+```{r global options, include=FALSE}
+knitr::opts_chunk$set(fig.path='Figures/', echo=TRUE)
+```
+
 ### Project Overview
 
 #### Background
